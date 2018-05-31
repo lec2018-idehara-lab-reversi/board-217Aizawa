@@ -1,10 +1,10 @@
-final int KURO = 1;
+final int KURO = 1; 
 final int SHIRO = -1;
 final int AKI = 0;
 final int SOTO = 255;
 final int BANSIZE = 640;
-final int CELLSIZE = BANSIZE / 8;
-final int STONESIZE = round(CELLSIZE * 0.9);
+final int CELLSIZE = BANSIZE / 8; //80
+final int STONESIZE = round(CELLSIZE * 0.9); //72.0
 
 int[][] ban;
 int teban = KURO;
@@ -36,8 +36,8 @@ void showBan(int[][] b)
   background(0,96,0);
   for(int i=0; i<9; i++)
   {
-    line(0,i*CELLSIZE,BANSIZE,i*CELLSIZE);
-    line(i*CELLSIZE,0,i*CELLSIZE,BANSIZE);
+    line(0,i*CELLSIZE,BANSIZE,i*CELLSIZE); //draw lineX
+    line(i*CELLSIZE,0,i*CELLSIZE,BANSIZE); //deaw lineY
   }
 
   for(int y=1; y<=8; y++)
@@ -50,9 +50,11 @@ void showBan(int[][] b)
           break;
         case AKI:
           break;
-        case KURO:
+        case KURO:     
+        ellipse(round(80*x-40),round(80*y-40),72,72);
           break;
         case SHIRO:
+        ellipse(round(80*x-40),round(80*y-40),72,72);
           break;
       }
     }
